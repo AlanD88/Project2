@@ -18,7 +18,7 @@ public:
 	Node* getNext( ) const { return next; }	
     void setStudent(const Student& newStudent) { student = newStudent; }
 	void setNext(Node *newNext) { next = newNext; }
-private:
+protected:
     Student student;	
     Node *next;		
 };
