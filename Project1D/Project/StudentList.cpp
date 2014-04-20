@@ -3,65 +3,51 @@
 
 
 // default constructor
-StudentList::StudentList() : first(NULL), last(NULL), count(0) {}
+StudentList::StudentList()
+{
+	studentList = new vector<Student>;
+}
 
 // addStudent
 void StudentList::addStudent(const Student& newStudent)
 {
-	Node *temp = new Node(newStudent, first);
-	++count;
-
-	if (first == NULL)
-	{
-		first = temp;
-		last = temp;
-	}
-	else
-	{	
-		temp->setNext(first);
-		first = temp;
-	}
-
-	
-
-
+	studentList->push_back(newStudent);
 }
 
 // getNoOfStudents
 int StudentList::getNoOfStudents() const
 {
-	return count;
+	return static_cast<int>(studentList->size());
 }
 
 // printStudentByID
 void StudentList::printStudentByID(int studentID, double tuitionRate) const
 {
 	//If list is empty
-	if (first == NULL)
+	if (static_cast<int>(studentList->size()) == 0)
 	{
 		cerr << "List is empty." << endl;
 	}
 	//If Student I.D is first in the list
-	if (first->getStudent().getID() == studentID)
-	{
-		first->getStudent().printStudentInfo(tuitionRate);
-		
+	if (studentList->at(0).getID == studentID)
+	{	
+		studentList->at(0).printStudentInfo(tuitionRate);	
 	}
 	
 	else
 	{
-		Node *current = first;
+		vector<Student>::iterator iter = studentList->begin();
 		bool isFound = false;
 
 			while (!isFound)
 			{
-				if (current->getStudent().getID() == studentID) //If data is found.
+				if (iter->getID() == studentID) //If data is found.
 				{
-					current->getStudent().printStudentInfo(tuitionRate);
+					iter->printStudentInfo(tuitionRate);
 					//current = current->getNext();
 					isFound = true;
 				}
-				else if (current == last && current->getStudent().getID() != studentID)
+				else if (iter == studentList->end())
 				{
 					cerr << "No student with ID " << studentID << " found in the list." << endl;
 					//current = current->getNext();
@@ -69,7 +55,7 @@ void StudentList::printStudentByID(int studentID, double tuitionRate) const
 				}
 				else
 				{
-					current = current->getNext();
+					iter++;
 				}
 				
 			}
@@ -82,21 +68,24 @@ void StudentList::printStudentByID(int studentID, double tuitionRate) const
 // printStudentsByCourse
 void StudentList::printStudentsByCourse(const string& courseNumber) const
 {
-	if (first == NULL)
-		cout << "List is empty.\n";
+	//If list is empty
+	if (static_cast<int>(studentList->size()) == 0)
+	{
+		cerr << "List is empty." << endl;
+	}
 	else
 	{
-		Node *current = first;
+		vector<Student>::iterator iter = studentList->begin();
 		bool printed = false;
-		while (current != NULL)
+		while (iter != studentList->end())
 		{
-			if (current->getStudent().getNumberOfCourses() != 0 &&
-				current->getStudent().isEnrolledInCourse(courseNumber))
+			if (iter->getNumberOfCourses() != 0 &&
+				iter->isEnrolledInCourse(courseNumber))
 			{
-				current->getStudent().printStudentInfo();
+				iter->printStudentInfo();
 				printed = true;
 			}
-			current = current->getNext();
+			iter++;
 		}
 		if (!printed)
 			cerr << "No student enrolled in " << courseNumber << endl;
@@ -108,9 +97,10 @@ void StudentList::printStudentsByCourse(const string& courseNumber) const
 // printStudentsByName
 void StudentList::printStudentsByName(const string& lastName) const
 {
-	if (first == NULL)
+	//If list is empty
+	if (static_cast<int>(studentList->size()) == 0)
 	{
-		cerr << "List is empty.";
+		cerr << "List is empty." << endl;
 	}
 	else
 	{

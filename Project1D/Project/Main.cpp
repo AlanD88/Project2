@@ -1,5 +1,5 @@
 /*
-Lopez, Bryan; Rhodes, Mason; Duncan, Alan;
+Lopez, Bryan; Rhodes, Mason; Duncan, Alan:
 CS A250
 March 6, 2014
 
