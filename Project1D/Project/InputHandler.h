@@ -9,7 +9,7 @@
 
 using namespace std;
 
-const char STUDENT_DATA[] = "student_data.txt";
+const char STUDENT_DATA[] = "student_data2.txt";
 
 void createStudentList(ifstream& infile, StudentList& studentList, double& tuitionRate)
 {
