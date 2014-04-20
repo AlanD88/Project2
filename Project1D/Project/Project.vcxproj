@@ -77,7 +77,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\..\..\..\project_2b_grade_report_stl_files\student_data_2.txt" />
-    <Text Include="example.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Course.h" />

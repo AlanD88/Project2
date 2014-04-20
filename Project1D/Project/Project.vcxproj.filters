@@ -35,9 +35,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="example.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
     <Text Include="..\..\..\..\..\project_2b_grade_report_stl_files\student_data_2.txt">
       <Filter>Resource Files</Filter>
     </Text>
