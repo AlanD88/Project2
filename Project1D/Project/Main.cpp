@@ -16,11 +16,11 @@ Project 1
 using namespace std;
 
 void displayMenu();
-void processChoice(const StudentList& studentList, double tuitionRate);
+void processChoice(const StudentListChild& studentList, double tuitionRate);
 
 int main()
 {
-	StudentList studentList;
+	StudentListChild studentList;
 	double tuitionRate;
 
 	readStudentData(studentList, tuitionRate);
@@ -42,11 +42,12 @@ void displayMenu()
 	cout << "    4: Print students by course" << endl;
 	cout << "    5: Print students on hold" << endl;
 	cout << "    6: Print students to file." << endl;
-	cout << "    7: To exit" << endl;
+	cout << "    7: Print roster." << endl;
+	cout << "    8: To exit" << endl;
 
 }
 
-void processChoice(const StudentList& studentList, double tuitionRate)
+void processChoice(const StudentListChild& studentList, double tuitionRate)
 {
 	int choice, id;
 	string courseNumber, lastName;
@@ -57,7 +58,7 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 
 	cout << fixed << showpoint << setprecision(2); 
 
-	while (choice != 7)
+	while (choice != 8)
 	{
 		string fName, lName;
 		int ssn = 0;
@@ -116,6 +117,11 @@ void processChoice(const StudentList& studentList, double tuitionRate)
 			printAllStudentsToFile(studentList, tuitionRate);
 			cout << endl;
 
+			break;
+
+		case 7:
+			studentList.printStudentsInOrder(); 
+			cout << endl;
 			break;
 
 			// Incorrect selection
