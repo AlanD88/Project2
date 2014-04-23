@@ -4,11 +4,15 @@
 #include "StudentList.h"
 
 #include <map>
+#include <string>
+#include <vector>
+#include <iostream>
 
 using namespace std;
 
-class StudentListChild
+class StudentListChild: public StudentList
 {
+public:
 	StudentListChild();
 
 	void printStudentsInOrder() const;

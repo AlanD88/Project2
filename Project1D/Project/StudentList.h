@@ -64,7 +64,7 @@ public:
 	~StudentList();
 
 
-private:
+protected:
 	vector<Student> *studentList;
 };
 

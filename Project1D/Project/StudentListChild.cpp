@@ -1,22 +1,31 @@
 #include "StudentListChild.h"
 
-	StudentListChild::StudentListChild()
+StudentListChild::StudentListChild()
+{
+}
+
+void StudentListChild::printStudentsInOrder() const
+{
+	map<string, int> students;
+	vector<Student>::const_iterator vectorIter;
+	map<string, int>::const_iterator mapIter;
+	string first, last, both;
+
+	for (vectorIter = studentList->begin(); vectorIter != studentList->end(); ++vectorIter)
 	{
+		vectorIter->getName(first, last);
+		both = (last + ", " + first);
+		students.emplace(both, vectorIter->getID());
 	}
 
-	void StudentListChild::printStudentsInOrder() const
+	for (mapIter = students.begin(); mapIter != students.end(); ++mapIter)
 	{
-		for (int i = 0; i < 10; i++)
-		{
-			//BORED STOPPING THIS MADDNESS NOW;
-			//THIS IS SPARTA!!!!!!!!!!!!!!!!!!
-			//THIS IS NOT A CHANGE!
-			//IS THIS WORKING?!?
-		}
+		cout << mapIter->second << " - " << mapIter->first << endl;
 	}
+}
 
-	StudentListChild::~StudentListChild()
-	{
-	}
+StudentListChild::~StudentListChild()
+{
+}
 
 

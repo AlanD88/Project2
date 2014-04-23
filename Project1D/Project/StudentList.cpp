@@ -29,7 +29,7 @@ void StudentList::printStudentByID(int studentID, double tuitionRate) const
 		cerr << "List is empty." << endl;
 	}
 	//If Student I.D is first in the list
-	if (studentList->at(0).getID == studentID)
+	if (studentList->at(0).getID() == studentID)
 	{	
 		studentList->at(0).printStudentInfo(tuitionRate);	
 	}

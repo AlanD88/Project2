@@ -18,7 +18,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v120</PlatformToolset>
+    <PlatformToolset>v110</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -76,9 +76,6 @@
     <ClCompile Include="StudentListChild.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\..\..\..\..\project_2b_grade_report_stl_files\student_data_2.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Course.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="OutputHandler.h" />
@@ -86,6 +83,9 @@
     <ClInclude Include="Student.h" />
     <ClInclude Include="StudentList.h" />
     <ClInclude Include="StudentListChild.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="student_data_2.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
