@@ -41,8 +41,8 @@ void displayMenu()
 	cout << "    3: Search student by last name" << endl;
 	cout << "    4: Print students by course" << endl;
 	cout << "    5: Print students on hold" << endl;
-	cout << "    6: Print students to file." << endl;
-	cout << "    7: Print roster." << endl;
+	cout << "    6: Print students to file" << endl;
+	cout << "    7: Print roster" << endl;
 	cout << "    8: To exit" << endl;
 
 }

@@ -126,7 +126,7 @@ void StudentList::printStudentsByName(const string& lastName) const
 				checkSecond = true;
 				//current = current->getNext();
 			}
-			else if (constIter == studentList->end() && !checkSecond)
+			else if (constIter == studentList->end() - 1 && !checkSecond) // studentList is never going to get to the end (constIter != studentList->end())
 			{
 				cerr << "No student with the last name " << lastName << " is in the list." << endl;
 				//isFound = true;
@@ -184,7 +184,7 @@ void StudentList::printStudentsOnHold(double tuitionRate) const
 				constIter->printStudentInfo();
 				cout << "   Amount Due: $" << constIter->billingAmount(tuitionRate) << endl;
 				holds = true;
-				constIter++;
+				//constIter++ made the program crash, was unnecessary I think
 			}
 			else if (!holds && constIter == studentList->end())
 			{
