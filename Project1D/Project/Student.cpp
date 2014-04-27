@@ -153,9 +153,7 @@ void Student::printStudentInfo(double tuitionRate) const
 		cout << "Amount Due: $" << billingAmount(tuitionRate) << endl;
 		cout << endl;
 		cout << "-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n\n";
-	}
-
-	
+	}	
 }
 
 //getCoursesEnrolled
@@ -202,5 +200,6 @@ void Student::printStudentInfoToFile(ofstream& out, double tuitionRate)
 
 	out << "\n-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-\n" << endl;
 }
+
 //Destructor
 Student::~Student(){}

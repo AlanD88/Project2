@@ -1,9 +1,11 @@
 #include "StudentListChild.h"
 
+// default constructor
 StudentListChild::StudentListChild()
 {
 }
 
+// printStudentsInOrder
 void StudentListChild::printStudentsInOrder() const
 {
 	map<string, int> students;
@@ -15,7 +17,7 @@ void StudentListChild::printStudentsInOrder() const
 	{
 		vectorIter->getName(first, last);
 		both = (last + ", " + first);
-		students.emplace(both, vectorIter->getID());
+		students.insert(make_pair(both, vectorIter->getID()));
 	}
 
 	for (mapIter = students.begin(); mapIter != students.end(); ++mapIter)
@@ -24,6 +26,7 @@ void StudentListChild::printStudentsInOrder() const
 	}
 }
 
+// destructor
 StudentListChild::~StudentListChild()
 {
 }

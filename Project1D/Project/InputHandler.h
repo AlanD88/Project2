@@ -11,7 +11,7 @@ using namespace std;
 
 const char STUDENT_DATA[] = "student_data_2.txt";
 
-void createStudentList(ifstream& infile, StudentList& studentList, double& tuitionRate)
+void createStudentList(ifstream& infile, StudentListChild& studentList, double& tuitionRate)
 {
 	string fName, lName;
 	int id, noOfCourses;
@@ -52,7 +52,7 @@ void createStudentList(ifstream& infile, StudentList& studentList, double& tuiti
 	}
 }
 
-void readStudentData(StudentList& studentList, double& tuitionRate)
+void readStudentData(StudentListChild& studentList, double& tuitionRate)
 {
 	ifstream infile;
 

@@ -17,7 +17,6 @@ void Course::setCourseInfo(const string& courseName, const string& courseNo, cha
 	
 }
 
-
 // printCourseInfo
 void Course::printCourseInfo(bool isGrade) const
 {

@@ -1,7 +1,5 @@
 #include "StudentList.h"
 
-
-
 // default constructor
 StudentList::StudentList()
 {
@@ -44,25 +42,19 @@ void StudentList::printStudentByID(int studentID, double tuitionRate) const
 				if (constIter->getID() == studentID) //If data is found.
 				{
 					constIter->printStudentInfo(tuitionRate);
-					//current = current->getNext();
 					isFound = true;
 				}
 				else if (constIter == studentList->end())
 				{
 					cerr << "No student with ID " << studentID << " found in the list." << endl;
-					//current = current->getNext();
 					isFound = true;
 				}
 				else
 				{
 					constIter++;
 				}
-				
 			}
-		
 	}
-
-
 }
 
 // printStudentsByCourse
@@ -87,21 +79,9 @@ void StudentList::printStudentsByCourse(const string& courseNumber) const
 				printed = true;
 			}
 		}
-		//while (constIter != studentList->end())
-		//{
-		//	if (constIter->getNumberOfCourses() != 0 &&
-		//		constIter->isEnrolledInCourse(courseNumber))
-		//	{
-		//		constIter->printStudentInfo();
-		//		printed = true;
-		//	}
-		//	constIter++;
-		//}
 		if (!printed)
 			cerr << "No student enrolled in " << courseNumber << endl;
 	}
-	
-
 }
 
 // printStudentsByName
@@ -115,7 +95,6 @@ void StudentList::printStudentsByName(const string& lastName) const
 	else
 	{
 		vector<Student>::const_iterator constIter;
-		//bool isFound = false;
 		bool checkSecond = false;  //Flag to check if 2 students share a last name
 
 		for (constIter = studentList->begin(); constIter != studentList->end(); ++constIter)
@@ -124,41 +103,12 @@ void StudentList::printStudentsByName(const string& lastName) const
 			{
 				constIter->printStudentInfo();
 				checkSecond = true;
-				//current = current->getNext();
 			}
 			else if (constIter == studentList->end() - 1 && !checkSecond) // studentList is never going to get to the end (constIter != studentList->end())
 			{
 				cerr << "No student with the last name " << lastName << " is in the list." << endl;
-				//isFound = true;
-				//current = current->getNext();
 			}
 		}
-
-		//while (!isFound)
-		//{
-		//	if (constIter->getLastName() == lastName)
-		//	{
-		//		constIter->printStudentInfo();
-		//		checkSecond = true;
-		//		//current = current->getNext();
-		//	}
-		//	else if (constIter == studentList->end() && !checkSecond)
-		//	{
-		//		cerr << "No student with the last name " << lastName << " is in the list." << endl;
-		//		isFound = true;
-		//		//current = current->getNext();
-		//	}
-		//	else if (constIter == studentList->end() && checkSecond)
-		//	{
-		//		//This runs if we get to the end but managed to find at least
-		//		//one student with the searched last name.
-		//		isFound = true;
-		//	}
-		//	else
-		//	{
-		//		constIter++;
-		//	}
-		//}
 	}
 }
 
@@ -174,7 +124,6 @@ void StudentList::printStudentsOnHold(double tuitionRate) const
 	{
 		vector<Student>::const_iterator constIter;
 		bool holds = false;  //check to see if no students on hold.
-		//bool found = false;
 
 		for (constIter = studentList->begin(); constIter != studentList->end(); ++constIter)
 		{
@@ -184,38 +133,12 @@ void StudentList::printStudentsOnHold(double tuitionRate) const
 				constIter->printStudentInfo();
 				cout << "   Amount Due: $" << constIter->billingAmount(tuitionRate) << endl;
 				holds = true;
-				//constIter++ made the program crash, was unnecessary I think
 			}
-			else if (!holds && constIter == studentList->end())
+			else if (!holds && constIter == studentList->end() - 1)
 			{
 				cout << "There are no students on hold.\n";
-				//found = true;
 			}
 		}
-		//while (!found) //(constIter != studentList->end())
-		//{
-		//	if (!constIter->isTuitionPaid())
-		//	{
-		//		
-		//		constIter->printStudentInfo();
-		//		cout << "   Amount Due: $" << constIter->billingAmount(tuitionRate) << endl;
-		//		holds = true;
-		//		constIter++;
-		//	}
-		//	else if (!holds && constIter == studentList->end())
-		//	{
-		//		cout << "There are no students on hold.\n";
-		//		found = true;
-		//	}
-		//	else if (holds && constIter == studentList->end())
-		//	{
-		//		found = true;
-		//	}
-		//	else
-		//	{
-		//		constIter++;
-		//	}
-		//}
 	}
 
 }
@@ -236,15 +159,8 @@ void StudentList::printAllStudents(double tuitionRate) const
 		{
 			constIter->printStudentInfo(tuitionRate);
 		}
-
-		//while (constIter != studentList->end())
-		//{
-		//	constIter->printStudentInfo(tuitionRate);
-		//	constIter++;
-		//}
 	}
 }
-
 
 // printStudentsToFile
 void StudentList::printStudentsToFile(ofstream& outp, double tuitionRate) const
@@ -262,14 +178,8 @@ void StudentList::printStudentsToFile(ofstream& outp, double tuitionRate) const
 		{
 			vectorIter->printStudentInfoToFile(outp, tuitionRate);
 		}
-		//while (vectorIter != studentList->end())
-		//{
-		//	vectorIter->printStudentInfoToFile(outp, tuitionRate);
-		//	vectorIter++;
-		//}
 	}
 }
-
 
 // destroyStudentList
 void StudentList::destroyStudentList()
@@ -277,7 +187,6 @@ void StudentList::destroyStudentList()
 	delete studentList;
 	studentList = NULL;
 }
-
 
 // destructor
 StudentList::~StudentList()

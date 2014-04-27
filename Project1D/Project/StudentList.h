@@ -9,21 +9,6 @@
 
 using namespace std;
 
-//class Node
-//{
-//public:
-//	Node( ): student( ), next(NULL) {} 
-//    Node(const Student& newStudent, Node *newNext) 
-//		: student(newStudent), next(newNext){}
-//    Student getStudent( ) const { return student; }
-//	Node* getNext( ) const { return next; }	
-//    void setStudent(const Student& newStudent) { student = newStudent; }
-//	void setNext(Node *newNext) { next = newNext; }
-//protected:
-//    Student student;	
-//    Node *next;		
-//};
-
 class StudentList
 {
 public:
@@ -52,17 +37,14 @@ public:
 	// printAllStudents
 	void printAllStudents(double tuitionRate) const;
 
-
 	// printStudentsToFile
 	void printStudentsToFile(ofstream& outp, double tuitionRate) const;
 
 	// destroyStudentList
 	void destroyStudentList();
 	
-
 	// destructor
 	~StudentList();
-
 
 protected:
 	vector<Student> *studentList;

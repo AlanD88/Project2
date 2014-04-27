@@ -41,6 +41,4 @@ private:
 	string lName;
 };
 
-
-
 #endif // PERSON_H

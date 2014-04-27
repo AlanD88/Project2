@@ -29,13 +29,10 @@ public:
 	//printCourseInfo const - Prints the course info.
 	// @Param isGrade - Returns true if student has a grade.
 
-
 	// getCourseCredits
 	int getCourseCredits() const;
 	// getCourseCredits const - Returns the course Credits.
 	//Returns the Course Credits.
-
-
 
 	// getCourseNumber
 	string getCourseNumber() const;
@@ -46,7 +43,6 @@ public:
 	string getCourseName() const;
 	// getCourseName const - returns the course name.
 	//@Return the course name.
-
 
 	// getCourseGrade
 	char getCourseGrade() const;

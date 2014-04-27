@@ -13,10 +13,14 @@ using namespace std;
 class StudentListChild: public StudentList
 {
 public:
+
+	// default constructor
 	StudentListChild();
 
+	// printStudentsInOrder
 	void printStudentsInOrder() const;
 
+	// destructor
 	~StudentListChild();
 };
   
