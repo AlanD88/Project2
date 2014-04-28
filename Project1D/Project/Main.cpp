@@ -80,7 +80,7 @@ void processChoice(const StudentListChild& studentList, double tuitionRate)
 			cout << endl;
 			
 			studentList.printStudentByID(id, tuitionRate);
-			//cout << endl;
+			cout << endl;
 
 			break;
 

@@ -44,7 +44,7 @@ void StudentList::printStudentByID(int studentID, double tuitionRate) const
 					constIter->printStudentInfo(tuitionRate);
 					isFound = true;
 				}
-				else if (constIter == studentList->end())
+				else if (constIter == studentList->end() - 1)
 				{
 					cerr << "No student with ID " << studentID << " found in the list." << endl;
 					isFound = true;
@@ -104,7 +104,7 @@ void StudentList::printStudentsByName(const string& lastName) const
 				constIter->printStudentInfo();
 				checkSecond = true;
 			}
-			else if (constIter == studentList->end() - 1 && !checkSecond) // studentList is never going to get to the end (constIter != studentList->end())
+			else if (constIter == studentList->end() - 1 && !checkSecond)
 			{
 				cerr << "No student with the last name " << lastName << " is in the list." << endl;
 			}

@@ -23,6 +23,6 @@ public:
 	// destructor
 	~StudentListChild();
 };
-  
+ 
 #endif
 
